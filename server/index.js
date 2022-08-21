@@ -16,7 +16,7 @@ const port = process.env.PORT || 8090;
 
 app.use(cors())
 
-const dbUrl = "mongodb+srv://ivanderkachov:63441257I@cluster0.uwzfx.mongodb.net/DB_1"
+const dbUrl = "mongodb+srv://vercel-admin-user-63028dda641acc47f155dbaa:u6rPpG4950xmXMMQ@cluster0.uwzfx.mongodb.net/admin"
 mongooseService.connect(dbUrl)
 
 // const newObj = new Users({
