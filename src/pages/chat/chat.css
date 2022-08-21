@@ -1,0 +1,203 @@
+.header {
+  height: 20px;
+  background-color: black;
+  position: sticky
+}
+
+.chat {
+  height: 100vh;
+  display: flex;
+
+}
+.chatMenu {
+  flex: 3.5;
+  border: 1px solid #d7d7d7;
+  max-width: 600px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.chatMenuHead {
+  display: flex;
+  align-items: center;
+  height: 10%;
+  font-size: 22px;
+  margin-left: 10px;
+  color: #5faccf
+}
+.chatBox {
+  flex: 5.5;
+  background-color: #fafafa;
+}
+.chatBoxTop{
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 20px;
+}
+.chatBoxWrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  border: 1px solid #d7d7d7;
+}
+.chatBoxBottom{
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  border: 1px solid #d7d7d7;
+  height: 20%
+}
+.chatBoxTextArea {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.chatMessageInput{
+  width: 85%;
+  padding: 10px 10px;
+  border: 1px solid #d7d7d7;
+  border-radius: 18px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
+}
+.chatMessageInput:focus {
+  outline: none;
+}
+
+.chatSubmitButton{
+  display: flex;
+  width: 50px;
+  height: 35px;
+  background-color: #f5f5f5;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+.chatButtonPaint {
+  width: 50px;
+  height: 50px;
+  transform: rotate(90deg);
+  color: grey;
+}
+.chatMenuWrapper, .chatBoxWrapper, .chatOnlineWrapper {
+
+  height: 100vh;
+
+}
+
+.noConversationText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 50px;
+  color: rgb(224, 220, 220);
+  cursor: default;
+}
+.findProcess {
+  color: rgb(224, 220, 220);
+}
+/* .chatMenuHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border: 1px solid #d7d7d7;
+  background-color: #f5f5f5
+}
+.chatMenuUserInfo {
+  display: flex;
+  align-items: center;
+}
+.chatMenuUserImg {
+  padding-top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+.chatMenuUserName {
+  font-weight: 500;
+  font-size: large;
+} */
+/* .chatMenuInput {
+  width: 90%;
+  padding: 10px 10px;
+  border: 1px solid #d7d7d7;
+  border-radius: 18px;
+  margin-left: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.chatMenuInput:focus {
+  outline: none;
+} */
+/* .chatBoxBottom{
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  border: 1px solid #d7d7d7;
+  height: 20%
+}
+.chatBoxTextArea {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.chatMessageInput{
+  width: 85%;
+  padding: 10px 10px;
+  border: 1px solid #d7d7d7;
+  border-radius: 18px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.chatMessageInput:focus {
+  outline: none;
+}
+
+.chatSubmitButton{
+  display: flex;
+  width: 50px;
+  height: 35px;
+  background-color: #f5f5f5;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+.chatButtonPaint {
+  width: 50px;
+  height: 50px;
+  transform: rotate(90deg);
+  color: grey;
+} */
+
+/* @media screen and (max-width: 768px) {
+  .chatMenu {
+    flex: 1;
+  }
+
+  .chatMenuInput {
+    display: none;
+  }
+
+  .chatBox{
+    flex: 10;
+  }
+
+  .chatOnline{
+    flex: 1px;
+  }
+} */

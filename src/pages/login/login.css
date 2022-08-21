@@ -1,0 +1,71 @@
+.login {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.loginForm {
+    background: #fff;
+    width: 500px;
+    margin: 65px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 2px 25px rgb(0 0 0 / 20%);
+}
+.loginForm h1{
+  color: #7c7a7a;
+}
+.loginFormWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.loginFormImg {
+  height: 20%;
+  width: 20%;
+}
+.loginFormInputField input{
+  height: 30px;
+  width: 80%;
+  margin: 10px;
+  font-size: 16px;
+  border: 0;
+  border-bottom: 1px solid #747474;
+  outline: none;
+}
+.loginFormButtonField {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.loginFormButtonField button{
+    width: 300px;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    margin: 10px;
+    background: #e8e9ec;
+    color: #777;
+    outline: none;
+    font-size: 16px;
+}
+.loginFormButtonField button:hover{
+  background: #d1d2d4;
+}
+.loginFormLink{
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+    color: #d7d7d7
+}
+.loginFormLink:visited {
+  text-decoration: none;
+}
+.loginFormLink:hover {
+  color: #848282;
+}
