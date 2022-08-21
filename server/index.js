@@ -2,7 +2,6 @@
 const express = require('express')
 const http = require('http')
 const cors = require('cors')
-const config = require('./config')
 const axios = require('axios')
 const mongooseService = require('./services/mongoose')
 const Users = require('./model/Users.model')
