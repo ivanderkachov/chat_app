@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
 
 export function logIn(form) {
   return (dispatch) => {
-    return axios.post('/api/v1/join',
+    return axios.post('https://chat-app-two-mocha.vercel.app/api/v1/join',
       { ...form },
       { headers: { "Content-type": "application/json" } }
       )
@@ -83,7 +83,7 @@ export function logOut() {
 
 export function getConversations(userId) {
   return (dispatch) => {
-    return axios(`/api/v1/conversations/${userId}`)
+    return axios(`https://chat-app-two-mocha.vercel.app/api/v1/conversations/${userId}`)
       .then(({ data }) => {
         const  conversations = data.conversations.reduce((acc,rec) => {
           return { ...acc, [rec._id]:rec }
@@ -98,7 +98,7 @@ export function getConversations(userId) {
 
 export function getUpdatedConversations(userId, friendId) {
   return (dispatch) => {
-    return axios(`/api/v1/conversations/${userId}/${friendId}`).then(({ data }) => {
+    return axios(`https://chat-app-two-mocha.vercel.app/api/v1/conversations/${userId}/${friendId}`).then(({ data }) => {
       const conversations = data.conversations.reduce((acc, rec) => {
         return { ...acc, [rec._id]: rec };
       }, {});
@@ -112,23 +112,24 @@ export function getUpdatedConversations(userId, friendId) {
 
 export function getUsers() {
   return (dispatch) => {
-    return axios('/api/v1/users')
-      .then(({ data }) => {
+    return axios("https://chat-app-two-mocha.vercel.app/api/v1/users").then(
+      ({ data }) => {
         const users = data.users.reduce((acc, rec) => {
-          return { ...acc, [rec._id]:rec }
-        }, {})
+          return { ...acc, [rec._id]: rec };
+        }, {});
         dispatch({
           type: GET_USERS,
-          users
-        })
-      })
+          users,
+        });
+      }
+    );
   }
 }
 
 export function postMessage(_id, message) {
   return (dispatch) => {
     return axios.post(
-      `/api/v1/messages/${_id}`,
+      `https://chat-app-two-mocha.vercel.app/api/v1/messages/${_id}`,
        { ...message },
        { headers: { "Content-type": "application/json" }
       })
@@ -148,7 +149,7 @@ export function postMessageCN(conversationId, userId, message) {
   return (dispatch) => {
     return axios
       .post(
-        `/api/v1/messages/cn/${conversationId}/${userId}`,
+        `https://chat-app-two-mocha.vercel.app/api/v1/messages/cn/${conversationId}/${userId}`,
         { ...message },
         { headers: { "Content-type": "application/json" } }
       )
