@@ -15,8 +15,10 @@ const router = express.Router()
 
 const port = process.env.PORT || 8090;
 
+dbURL =
+  "mongodb+srv://ivanderkachov:63441257I@cluster0.uwzfx.mongodb.net/DB_1";
 
-mongooseService.connect(process.env.MONGODB_URI)
+mongooseService.connect(dbURL)
 
 
 // app.use(express.static("../public"));

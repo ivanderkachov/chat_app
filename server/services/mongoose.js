@@ -9,10 +9,10 @@ mongoose.connection.on('error', (err) => {
   process.exit(1)
 })
 
-exports.connect = async (mongoURL = process.env.MONGO_URL) => {
+exports.connect = async (mongoURL = "127.0.0.1:27017/db") => {
   mongoose.connect(mongoURL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  return mongoose.connection
-}
+    useUnifiedTopology: true,
+  });
+  return mongoose.connection;
+};
