@@ -9,7 +9,7 @@ mongoose.connection.on('error', (err) => {
   process.exit(1)
 })
 
-exports.connect = async (mongoURL = "127.0.0.1:27017/db") => {
+exports.connect = async (mongoURL = "mongodb+srv://ivanderkachov:63441257I@cluster0.uwzfx.mongodb.net/DB_1") => {
   mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
