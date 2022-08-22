@@ -1,6 +1,6 @@
 
 const express = require('express')
-const http = require('http')
+// const http = require('http')
 const cors = require('cors')
 const axios = require('axios')
 const path = require('path')
@@ -23,27 +23,27 @@ mongooseService.connect(process.env.MONGODB_URI)
 app.use(cors());
 app.use(router)
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../build")))
-  app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../build/index.html"), function (err) {
-      if (err) {
-        res.status(500).send(err)
-      }
-    });
-  })
-} else {
-  app.get("/", (req, res) => {
-    res.send("Api running")
-  })
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "../build")))
+//   app.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../build/index.html"), function (err) {
+//       if (err) {
+//         res.status(500).send(err)
+//       }
+//     });
+//   })
+// } else {
+//   app.get("/", (req, res) => {
+//     res.send("Api running")
+//   })
+// }
 
-console.log(process.env.NODE_ENV)
-// app.get("/", (req, res) => {
-//   res.sendFile("index.html", { root: path.join(__dirname, "../public") });
-// });
+// console.log(process.env.NODE_ENV)
+app.get("/", (req, res) => {
+  res.send("Server");
+});
 
 // router.get("/", (req, res) => {
 //   res.json("Server up and running");
@@ -151,4 +151,4 @@ app.listen(port, () => {
   console.log(`Server has started on port ${port}`)
 })
 
-module.exports = app;
+// module.exports = app;
