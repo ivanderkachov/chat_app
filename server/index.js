@@ -13,20 +13,23 @@ const router = express.Router()
 
 const port = process.env.PORT || 8090;
 
-app.use(cors())
-
 const dbUrl =
   "mongodb+srv://ivanderkachov:63441257I@cluster0.uwzfx.mongodb.net/DB_1";
 mongooseService.connect(dbUrl)
 
-router.get('/', (req,res) => {
-  res.json('Server up and running')
-})
 
+app.use(express.static("../public"));
+app.use(cors());
 app.use(router)
 app.use(express.json())
 
+app.get("/", (req, res) => {
+  res.sendFile("index.html", { root: path.join(__dirname, "../public") });
+});
 
+router.get("/", (req, res) => {
+  res.json("Server up and running");
+});
 
 app.get("/api/v1/info", (req, res) => {
   res.json({ status: "ok" });
@@ -129,3 +132,5 @@ app.post("/api/v1/messages/cn/:conversationId/:userId", async (req, res) => {
 server.listen(port, () => {
   console.log(`Server has started on port ${port}`)
 })
+
+module.exports = app;
