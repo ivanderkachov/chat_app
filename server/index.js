@@ -73,7 +73,7 @@ app.post("/api/v1/join", async (req, res) => {
 
 })
 
-app.get("https://chat-app-two-mocha.vercel.app/api/v1/users", async (req, res) => {
+app.get("/api/v1/users", async (req, res) => {
   try {
     const users = await Users.find({}).exec()
     res.json({status: 'ok', users})
@@ -82,7 +82,7 @@ app.get("https://chat-app-two-mocha.vercel.app/api/v1/users", async (req, res) =
   }
 })
 
-app.get("https://chat-app-two-mocha.vercel.app/api/v1/conversations/:userId", async (req, res) => {
+app.get("/api/v1/conversations/:userId", async (req, res) => {
   const { userId } = req.params
   try {
     const conversations = await Conversations.find({members: { $in: [userId]}}).sort({ updatedAt: 'desc' }).exec()
@@ -92,7 +92,7 @@ app.get("https://chat-app-two-mocha.vercel.app/api/v1/conversations/:userId", as
   }
 })
 
-app.get("https://chat-app-two-mocha.vercel.app/api/v1/conversations/:userId/:friendId", async (req, res) => {
+app.get("/api/v1/conversations/:userId/:friendId", async (req, res) => {
   const { userId, friendId } = req.params
   try {
     const conversationExist = await Conversations.find({members: { $all: [userId, friendId]}}).exec()
@@ -114,7 +114,7 @@ app.get("https://chat-app-two-mocha.vercel.app/api/v1/conversations/:userId/:fri
   }
 })
 
-app.post("https://chat-app-two-mocha.vercel.app/api/v1/messages/:conversationId", async (req, res) => {
+app.post("/api/v1/messages/:conversationId", async (req, res) => {
   const { conversationId } = req.params
   const message = req.body
   try {
@@ -126,7 +126,7 @@ app.post("https://chat-app-two-mocha.vercel.app/api/v1/messages/:conversationId"
   }
 })
 
-app.post("https://chat-app-two-mocha.vercel.app/api/v1/messages/cn/:conversationId/:userId", async (req, res) => {
+app.post("/api/v1/messages/cn/:conversationId/:userId", async (req, res) => {
   const { conversationId, userId } = req.params
   const message = req.body
   const response = await axios("https://api.chucknorris.io/jokes/random")
