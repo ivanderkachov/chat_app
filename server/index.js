@@ -13,7 +13,7 @@ const app = express();
 const router = express.Router()
 
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8090;
 
 
 mongooseService.connect(process.env.MONGODB_URI)
