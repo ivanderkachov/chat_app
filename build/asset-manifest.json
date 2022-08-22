@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af841a1f.css",
+    "main.js": "/static/js/main.4e1cfb18.js",
+    "static/media/Alex.jpeg": "/static/media/Alex.0e4487ec7b7251b6a8d9.jpeg",
+    "static/media/Howard.jpeg": "/static/media/Howard.a454aca1d8ece650c054.jpeg",
+    "static/media/Liza.jpeg": "/static/media/Liza.593a896d4f3b3605598d.jpeg",
+    "static/media/Marie.jpeg": "/static/media/Marie.94414bdcff8d61694faf.jpeg",
+    "static/media/John.jpeg": "/static/media/John.25956d84dbd528fdd1ad.jpeg",
+    "static/media/Jack.jpeg": "/static/media/Jack.181f637ea9b659051e6d.jpeg",
+    "static/media/Andrew.jpeg": "/static/media/Andrew.fe6eae20850e831fde6d.jpeg",
+    "static/media/Natalie.jpeg": "/static/media/Natalie.be0b51d533d4d12a788f.jpeg",
+    "static/media/Nophoto.png": "/static/media/Nophoto.328a5b72ab54bc5e9c0c.png",
+    "index.html": "/index.html",
+    "main.af841a1f.css.map": "/static/css/main.af841a1f.css.map",
+    "main.4e1cfb18.js.map": "/static/js/main.4e1cfb18.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af841a1f.css",
+    "static/js/main.4e1cfb18.js"
+  ]
+}
