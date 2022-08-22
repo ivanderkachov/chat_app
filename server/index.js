@@ -9,7 +9,7 @@ const mongooseService = require('./services/mongoose')
 const Users = require('./model/Users.model')
 const Conversations = require('./model/Conversation.model')
 const app = express();
-const server = http.createServer(app)
+// const server = http.createServer(app)
 const router = express.Router()
 
 
@@ -23,12 +23,16 @@ mongooseService.connect(process.env.MONGODB_URI)
 app.use(cors());
 app.use(router)
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../build")))
   app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../build/index.html"));
+    res.sendFile(path.join(__dirname, "../build/index.html"), function (err) {
+      if (err) {
+        res.status(500).send(err)
+      }
+    });
   })
 } else {
   app.get("/", (req, res) => {
@@ -143,7 +147,7 @@ app.post("/api/v1/messages/cn/:conversationId/:userId", async (req, res) => {
   }
 })
 
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server has started on port ${port}`)
 })
 
