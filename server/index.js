@@ -196,3 +196,4 @@ server.listen(port, () => {
   console.log(`Server has started on port ${port}`)
 })
 
+module.exports = server
