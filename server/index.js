@@ -15,6 +15,9 @@ const router = express.Router()
 
 const port = process.env.PORT || 8090;
 
+app.listen(port, () => {
+  console.log(`Server has started on port ${port}`);
+});
 
 mongooseService.connect(process.env.MONGODB_URI)
 
@@ -147,8 +150,8 @@ app.post("/api/v1/messages/cn/:conversationId/:userId", async (req, res) => {
   }
 })
 
-app.listen(port, () => {
-  console.log(`Server has started on port ${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Server has started on port ${port}`)
+// })
 
 // module.exports = app;
