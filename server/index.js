@@ -16,7 +16,7 @@ const router = express.Router()
 const port = process.env.PORT;
 
 
-mongooseService.connect(process.env.MONGO_URL)
+mongooseService.connect(process.env.MONGODB_URI)
 
 
 // app.use(express.static("../public"));
