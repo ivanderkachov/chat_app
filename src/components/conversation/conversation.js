@@ -17,33 +17,6 @@ const Conversation = ({conversation, user, toggle, setDivToggle }) => {
   const friendName = users[friendId].name
   const friendPhoto = users[friendId].photo
   const lastMessage = conversation.messages[conversation.messages.length-1]
-  // const friendMessages = conversation.messages.filter((message) => message.sender === friendId)
-  // let lastFriendMessage = friendMessages[friendMessages.length-1]
-  // const toggleExist = toggle && toggle._id === conversation._id
-
-  // const [lastMessageCounter, setLastMessageCounter] = useState([])
-
-  // useEffect(() => {
-  //   // if (toggle === null) {
-  //   //   setLastMessageCounter([...lastMessageCounter, lastMessage])
-  //   // } else {
-  //   //   if (toggle._id !== conversation._id) {
-  //   //     setLastMessageCounter([...lastMessageCounter, lastMessage]);
-  //   //     console.log(lastMessageCounter);
-  //   //   } else {
-  //   //   setLastMessageCounter([])
-  //   //   console.log(lastMessageCounter);
-  //   //   }
-  //   // }
-  //   if (toggle !== null && toggle._id === conversation._id) {
-  //     setLastMessageCounter([])
-  //   }
-  //   setLastMessageCounter([...lastMessageCounter, lastFriendMessage]);
-
-  // },[])
-
-// console.log(friendMessages, lastFriendMessage)
-
 
   return (
     <div className="conversationContainer" >

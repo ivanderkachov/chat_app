@@ -13,77 +13,11 @@ const router = express.Router()
 
 const port = process.env.PORT || 8090;
 
-
 app.use(cors())
 
 const dbUrl =
   "mongodb+srv://ivanderkachov:63441257I@cluster0.uwzfx.mongodb.net/DB_1";
 mongooseService.connect(dbUrl)
-
-// const newObj = new Users({
-//   name: 'Tom',
-//   email:'test2@gmail.com',
-//   password: '123456'
-// })
-// newObj.save()
-
-// const newObj1 = new Users({
-//   name: "Jerry",
-//   email: "test3@gmail.com",
-//   password: "123456",
-// });
-// newObj1.save();
-
-// const newConv = new Conversations({
-//   members: ["62fc9ebf16a6a499bb086842", "62fc9ebf16a6a499bb086843"],
-//   messages: [
-//     {
-//       sender: "62fc9ebf16a6a499bb086842",
-//       text: "Hello, Marie!",
-//       createdAt: new Date().toISOString(),
-//     },
-//     {
-//       sender: "62fc9ebf16a6a499bb086843",
-//       text: "Hello, John",
-//       createdAt: new Date().toISOString(),
-//     },
-//   ],
-// });
-// newConv.save()
-
-// const newConv1 = new Conversations({
-//   members: ["62fc9ebf16a6a499bb086842", "62fc9f07d1476128a5295922"],
-//   messages: [
-//     {
-//       sender: "62fc9ebf16a6a499bb086842",
-//       text: "Hello, Jerry!",
-//       createdAt: new Date().toISOString(),
-//     },
-//     {
-//       sender: "62fc9f07d1476128a5295922",
-//       text: "Hello, John",
-//       createdAt: new Date().toISOString(),
-//     },
-//   ],
-// });
-// newConv1.save();
-
-// const newConv2 = new Conversations({
-//   members: ["62fc9f07d1476128a5295921", "62fc9f07d1476128a5295922"],
-//   messages: [
-//     {
-//       sender: "62fc9f07d1476128a5295921",
-//       text: "Hello, Jerry!",
-//       createdAt: new Date().toISOString(),
-//     },
-//     {
-//       sender: "62fc9f07d1476128a5295922",
-//       text: "Hello, Tom",
-//       createdAt: new Date().toISOString(),
-//     },
-//   ],
-// });
-// newConv2.save();
 
 router.get('/', (req,res) => {
   res.json('Server up and running')
@@ -195,5 +129,3 @@ app.post("/api/v1/messages/cn/:conversationId/:userId", async (req, res) => {
 server.listen(port, () => {
   console.log(`Server has started on port ${port}`)
 })
-
-module.exports = app
