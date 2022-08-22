@@ -4,6 +4,7 @@ const http = require('http')
 const cors = require('cors')
 const axios = require('axios')
 const path = require('path')
+require("dotenv").config({ path: ".env" });
 const mongooseService = require('./services/mongoose')
 const Users = require('./model/Users.model')
 const Conversations = require('./model/Conversation.model')
@@ -12,25 +13,36 @@ const server = http.createServer(app)
 const router = express.Router()
 
 
-const port = process.env.PORT || 8090;
-
-const dbUrl =
-  "mongodb+srv://ivanderkachov:63441257I@cluster0.uwzfx.mongodb.net/DB_1";
-mongooseService.connect(dbUrl)
+const port = process.env.PORT;
 
 
-app.use(express.static("../public"));
+mongooseService.connect(process.env.MONGO_URL)
+
+
+// app.use(express.static("../public"));
 app.use(cors());
 app.use(router)
 app.use(express.json())
 
-app.get("/", (req, res) => {
-  res.sendFile("index.html", { root: path.join(__dirname, "../public") });
-});
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../build")))
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../build", "index.html"))
+  })
+} else {
+  app.get("/", (req, res) => {
+    res.send("Api running")
+  })
+}
 
-router.get("/", (req, res) => {
-  res.json("Server up and running");
-});
+console.log(process.env.NODE_ENV)
+// app.get("/", (req, res) => {
+//   res.sendFile("index.html", { root: path.join(__dirname, "../public") });
+// });
+
+// router.get("/", (req, res) => {
+//   res.json("Server up and running");
+// });
 
 app.get("/api/v1/info", (req, res) => {
   res.json({ status: "ok" });
